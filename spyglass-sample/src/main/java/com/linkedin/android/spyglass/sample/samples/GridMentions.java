@@ -34,6 +34,7 @@ import com.linkedin.android.spyglass.suggestions.interfaces.SuggestionsResultLis
 import com.linkedin.android.spyglass.suggestions.interfaces.SuggestionsVisibilityManager;
 import com.linkedin.android.spyglass.tokenization.QueryToken;
 import com.linkedin.android.spyglass.tokenization.impl.WordTokenizer;
+import com.linkedin.android.spyglass.tokenization.impl.WordTokenizerConfig;
 import com.linkedin.android.spyglass.tokenization.interfaces.QueryTokenReceiver;
 import com.linkedin.android.spyglass.ui.MentionsEditText;
 
@@ -63,7 +64,9 @@ public class GridMentions extends AppCompatActivity implements QueryTokenReceive
         recyclerView.setAdapter(adapter);
 
         editor = (MentionsEditText) findViewById(R.id.editor);
-        editor.setTokenizer(new WordTokenizer());
+        final WordTokenizerConfig.Builder tokenizerBuilder = new WordTokenizerConfig.Builder();
+        tokenizerBuilder.setExplicitChars("#").setThreshold(128);
+        editor.setTokenizer(new WordTokenizer(tokenizerBuilder.build()));
         editor.setQueryTokenReceiver(this);
         editor.setSuggestionsVisibilityManager(this);
         editor.setHint(getResources().getString(R.string.type_person));

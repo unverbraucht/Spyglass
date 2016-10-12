@@ -19,11 +19,15 @@
     <com.linkedin.android.spyglass.ui.MentionsEditText
         android:id="@+id/editor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="top|left"
+        android:layout_weight="1"
+        android:minHeight="200dp"
         android:imeOptions="flagNoExtractUi"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mentions_grid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_weight="1"
+        android:layout_height="0dp" />
 </LinearLayout>

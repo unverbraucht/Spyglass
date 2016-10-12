@@ -25,6 +25,7 @@
 
         <activity
             android:name=".samples.GridMentions"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/grid_mentions_sample" />
 
         <activity
