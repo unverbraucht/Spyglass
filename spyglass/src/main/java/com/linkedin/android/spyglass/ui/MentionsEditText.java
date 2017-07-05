@@ -60,6 +60,7 @@ import com.linkedin.android.spyglass.tokenization.QueryToken;
 import com.linkedin.android.spyglass.tokenization.interfaces.QueryTokenReceiver;
 import com.linkedin.android.spyglass.tokenization.interfaces.TokenSource;
 import com.linkedin.android.spyglass.tokenization.interfaces.Tokenizer;
+import com.vanniktech.emoji.EmojiEditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ import java.util.List;
  * @attr ref R.styleable#MentionsEditText_selectedMentionTextColor
  * @attr ref R.styleable#MentionsEditText_selectedMentionTextBackgroundColor
  */
-public class MentionsEditText extends EditText implements TokenSource {
+public class MentionsEditText extends EmojiEditText implements TokenSource {
 
     private static final String KEY_MENTION_SPANS = "mention_spans";
     private static final String KEY_MENTION_SPAN_STARTS = "mention_span_starts";
@@ -110,7 +111,7 @@ public class MentionsEditText extends EditText implements TokenSource {
     }
 
     public MentionsEditText(@NonNull Context context, @Nullable AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+        super(context, attrs);
         init(attrs, defStyle);
     }
 
