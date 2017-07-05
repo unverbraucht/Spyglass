@@ -48,6 +48,13 @@ import java.util.List;
 public class GridMentions extends AppCompatActivity implements QueryTokenReceiver, SuggestionsResultListener, SuggestionsVisibilityManager {
 
     private static final String BUCKET = "people-network";
+    private static final WordTokenizerConfig tokenizerConfig = new WordTokenizerConfig
+            .Builder()
+            .setWordBreakChars(", ")
+            .setExplicitChars("")
+            .setMaxNumKeywords(2)
+            .setThreshold(1)
+            .build();
 
     private RecyclerView recyclerView;
     private MentionsEditText editor;
@@ -64,9 +71,13 @@ public class GridMentions extends AppCompatActivity implements QueryTokenReceive
         recyclerView.setAdapter(adapter);
 
         editor = (MentionsEditText) findViewById(R.id.editor);
+<<<<<<< HEAD
         final WordTokenizerConfig.Builder tokenizerBuilder = new WordTokenizerConfig.Builder();
         tokenizerBuilder.setExplicitChars("#").setThreshold(128);
         editor.setTokenizer(new WordTokenizer(tokenizerBuilder.build()));
+=======
+        editor.setTokenizer(new WordTokenizer(tokenizerConfig));
+>>>>>>> master
         editor.setQueryTokenReceiver(this);
         editor.setSuggestionsVisibilityManager(this);
         editor.setHint(getResources().getString(R.string.type_person));
