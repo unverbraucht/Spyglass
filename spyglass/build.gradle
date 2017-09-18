@@ -8,6 +8,7 @@ repositories {
     flatDir{
         dirs '../../app/libs'
     }
+    google()
 }
 
 android {
