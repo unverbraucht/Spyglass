@@ -5,14 +5,14 @@ apply plugin: 'maven'
 repositories {
     mavenCentral()
     jcenter()
-    flatDir{
+    flatDir {
         dirs '../../app/libs'
     }
     google()
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion "24.0.2"
 
     defaultConfig {
