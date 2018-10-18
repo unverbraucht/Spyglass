@@ -13,11 +13,11 @@ repositories {
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 24
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -68,7 +68,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
-    compile 'com.vanniktech:emoji-google:0.5.1'
+    implementation 'com.vanniktech:emoji-google:0.5.1'
 //    compile(name:'Emoji', ext:'aar')
 //    compile(name:'Emoji-google', ext:'aar')
 
